@@ -102,7 +102,7 @@ const Home = () => {
 
                 <div className="col-lg-3">
                   <a
-                    href="#"
+                    href="/services"
                     className="button button-3d button-dark button-large btn-block center"
                     style={{ marginTop: '30px' }}
                   >

@@ -44,31 +44,31 @@ const Header = ({ history }) => {
                 <li className="menu-item">
                   <a className="menu-link" href="/">
                     <div>Home</div>
-                    <span>Lets Start</span>
+                    
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/about">
                     <div>ABOUT</div>
-                    <span>Know More</span>
+                   
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/services">
                     <div>Services</div>
-                    <span>Know More</span>
+                   
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/contactus">
                     <div>Contact</div>
-                    <span>Know More</span>
+                   
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/trainings">
                     <div>Trainings</div>
-                    <span>Know More</span>
+                   
                   </a>
                 </li>
                 {isAuthenticated() && (
@@ -83,7 +83,7 @@ const Header = ({ history }) => {
                       }
                     >
                       <div>Signout</div>
-                      <span>Know More</span>
+                     
                     </span>
                   </li>
                 )}
