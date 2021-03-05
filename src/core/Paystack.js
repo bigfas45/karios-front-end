@@ -8,6 +8,7 @@ import { Link, Redirect, useHistory } from 'react-router-dom';
 const Paystack = (props) => {
   let history = useHistory();
   const [values, setValues] = useState([]);
+  const [error, setError] = useState('');
   const publicKey = 'pk_test_3c713de9a71c00fa72ed7193436212f5ec0b08a5';
   const loadOrder = (referenceId) => {
     // ref = referenceId;
