@@ -82,7 +82,7 @@ const Shop = () => {
       <section id="page-title">
         <div className="container clearfix">
           <h1>Shop</h1>
-          <span>Start Buying your Favourite Theme</span>
+        
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <a href="#">Home</a>

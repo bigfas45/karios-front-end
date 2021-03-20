@@ -63,7 +63,7 @@ const Routes = () => {
         <Route path="/paystack/:referenceId" exact component={Paystack}></Route>
 
         <AdminRoute
-          path="/dashbaord"
+          path="/dashboard"
           exact
           component={UserDashboard}
         ></AdminRoute>
