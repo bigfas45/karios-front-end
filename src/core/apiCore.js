@@ -21,6 +21,9 @@ export const getCategories = () => {
     .catch((err) => console.log(err));
 };
 
+
+
+
 export const getFilteredProduct = (skip, limit,  filters = {}) => {
   const data = {
     limit,
