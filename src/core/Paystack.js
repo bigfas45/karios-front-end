@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { getOrder } from './apiCore';
-import { PaystackButton } from 'react-paystack';
+import PaystackButton from 'react-paystack';
 import { Link, Redirect, useHistory } from 'react-router-dom';
 
 const Paystack = (props) => {
@@ -26,25 +26,34 @@ const Paystack = (props) => {
     loadOrder(referenceId);
   }, [props]);
 
-  const componentProps = {
-    email: 'afasina@nasdng.com',
-    amount: 1000 * 100,
 
-    referenceId: 1614724909836,
-    metadata: {
-      name: 'lastname',
-      phone: '0902626726728',
-    },
-    publicKey,
-    text: 'Pay',
-    className: 'class="btn btn-secondary btn-block btn-lg"',
-    onSuccess: (data) => {
-       return history.push('/');
-      // return <Redirect to="/" />;
-    },
+  
 
-    onClose: () => alert("Wait! Don't leave :("),
-  };
+   const callback = (response) => {
+      console.log(response); // card charged successfully, get reference here
+    };
+
+   const close = () => {
+     console.log('Payment closed');
+   };
+
+   const getReference = () => {
+     //you can put any unique reference implementation code here
+     let text = '';
+     let possible =
+       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=';
+
+     for (let i = 0; i < 15; i++)
+       text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+     return text;
+   };
+
+
+
+
+
+
 
   const section = () => {
     return (
@@ -62,22 +71,47 @@ const Paystack = (props) => {
                       <div class="form-result"></div>
                       <div class="row">
                         {values.map((order, i) => {
+                          let email = order.email;
                           return (
                             <Fragment>
                               <h3 key={i} class="mb-0">
-                                I {order.lastname} would like to pay the sum of{' '}
-                                {order.product.price} for the training (
-                                {order.product.name}), so please send me the
-                                Confirmation Message on my {order.email}
+                                Registration confirmation:
+                                <br />
+                                Name: {order.lastname}
+                                <br />
+                                Email: {email}
+                                <br />
+                                Course: {order.product.name}
+                                <br />
+                                Price: {order.product.price}
+                                <br />
                               </h3>
+
+                              <br />
+                              <br />
+                              <div class="col-12">{/*  */}</div>
                             </Fragment>
                           );
                         })}
-                        <div class="col-12">
-                          <PaystackButton {...componentProps} />
-                        </div>
                       </div>
-                      {/* {JSON.stringify(values)} */}
+                      {/* put here */}
+                      <div>
+                        <p>
+                          <PaystackButton
+                            text="Make Payment"
+                            class="payButton"
+                            callback={callback()}
+                            close={close()}
+                            disabled={true}
+                            embed={true}
+                            reference={getReference()}
+                            email="afasina@nasdng.com"
+                            amount={10000}
+                            paystackkey={publicKey}
+                            tag="button"
+                          />
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -93,7 +127,7 @@ const Paystack = (props) => {
     <Fragment>
       <Header></Header>
       {section()}
-   
+
       <Footer></Footer>
     </Fragment>
   );

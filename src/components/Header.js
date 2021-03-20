@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { signout, isAuthenticated } from '../auth';
-import IMG from './logo-3_1_50.png';
+import IMG from './Kairo_PNG.png';
 
 const Header = ({ history }) => {
   return (
@@ -15,18 +15,10 @@ const Header = ({ history }) => {
         <div className="container">
           <div className="header-row">
             <div id="logo">
-              <a
-                href="/"
-                className="standard-logo"
-                data-dark-logo={IMG}
-              >
+              <a href="/" className="standard-logo" data-dark-logo={IMG}>
                 <img src={IMG} alt="Canvas Logo" />
               </a>
-              <a
-                href="/"
-                className="retina-logo"
-                data-dark-logo={IMG}
-              >
+              <a href="/" className="retina-logo" data-dark-logo={IMG}>
                 <img src={IMG} alt="Canvas Logo" />
               </a>
             </div>
@@ -44,33 +36,36 @@ const Header = ({ history }) => {
                 <li className="menu-item">
                   <a className="menu-link" href="/">
                     <div>Home</div>
-                    
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/about">
                     <div>ABOUT</div>
-                   
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/services">
                     <div>Services</div>
-                   
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/contactus">
                     <div>Contact</div>
-                   
                   </a>
                 </li>
                 <li className="menu-item">
                   <a className="menu-link" href="/trainings">
                     <div>Trainings</div>
-                   
                   </a>
                 </li>
+
+                <li className="menu-item">
+                  <a className="menu-link" href="/shop">
+                    <div>Shop</div>
+                  </a>
+                </li>
+
+
                 {isAuthenticated() && (
                   <li className="menu-item">
                     <span
@@ -83,7 +78,6 @@ const Header = ({ history }) => {
                       }
                     >
                       <div>Signout</div>
-                     
                     </span>
                   </li>
                 )}

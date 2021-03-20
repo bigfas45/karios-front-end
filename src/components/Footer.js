@@ -348,7 +348,7 @@ const Footer = () => {
         <div className="container">
           <div className="row col-mb-30">
             <div className="col-md-6 text-center text-md-left">
-              Copyrights &copy; 2020 All Rights Reserved by Kairos Integrated
+              Copyrights &copy; 2021 All Rights Reserved by Kairos Integrated
               Concepts
               <br />
               <div className="copyright-links">
@@ -425,7 +425,7 @@ const Footer = () => {
               <div className="clear"></div>
               <i className="icon-envelope2"></i> info@kairosng.com{' '}
               <span className="middot">&middot;</span>{' '}
-              <i className="icon-headphones"></i> +234 908 788 8862,{' '}
+              <i className="icon-headphones"></i> 01 630 6765,{' '}
               <span className="middot">&middot;</span>{' '}
               <i className="icon-skype2"></i> KariosOnSkype
             </div>

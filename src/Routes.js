@@ -9,6 +9,12 @@ import Trainings from './core/Trainings';
 import Training_Details from './core/Training-details';
 import Billing from './core/Billing';
 import Paystack from './core/Paystack';
+import Business from './core/Business';
+import Sme from './core/Sme';
+import Technology from './core/Technology';
+import Leadership from './core/Leadership';
+import Shop from './core/Shop';
+import ShopDetails from './core/shop-details';
 
 import AdminRoute from './auth/AdminRoute';
 import Signin from './core/Signin';
@@ -16,8 +22,6 @@ import Signup from './core/Signup';
 import UserDashboard from './user/UserDashboard';
 import AddCategory from './user/AddCategory';
 import AddTraining from './user/AddTraining';
-
-
 
 const Routes = () => {
   return (
@@ -30,7 +34,24 @@ const Routes = () => {
         <Route path="/trainings" exact component={Trainings}></Route>
         <Route path="/signin" exact component={Signin}></Route>
         <Route path="/signup" exact component={Signup}></Route>
-
+        <Route path="/business-advisory" exact component={Business}></Route>
+        <Route path="/sme-incubation" exact component={Sme}></Route>
+        <Route path="/shop" exact component={Shop}></Route>
+        <Route
+          path="/leadership-development"
+          exact
+          component={Leadership}
+        ></Route>
+        <Route
+          path="/technology-and-telecom-solution-sales"
+          exact
+          component={Technology}
+        ></Route>
+        <Route
+          path="/shop-details/:shopId"
+          exact
+          component={ShopDetails}
+        ></Route>
         <Route
           path="/training-details/:trainId"
           exact

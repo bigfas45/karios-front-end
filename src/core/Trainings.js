@@ -43,7 +43,7 @@ const Trainings = () => {
   const loadMore = () => {
     let toSkip = skip + limit;
     //console.log(newFilters);
-    getFilteredProduct(toSkip, limit, myFilters.filters).then((data) => {
+    getFilteredProduct(toSkip, limit,  myFilters.filters).then((data) => {
       if (data.error) {
         setError(data.error);
       } else {
@@ -101,8 +101,8 @@ const Trainings = () => {
       <Header></Header>
       <section id="page-title">
         <div className="container clearfix">
-          <h1>Training List</h1>
-          <span>Showcase of Trainings </span>
+          <h1>Trainings</h1>
+
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <a href="/">Home</a>

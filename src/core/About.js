@@ -3,11 +3,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 const About = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
 
   return (
     <Fragment>
@@ -43,59 +41,6 @@ const About = () => {
       <section id="content">
         <div className="content-wrap">
           <div className="container clearfix">
-            <div className="row col-mb-50 mb-0">
-              <div className="col-lg-4">
-                <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
-                  <h4>
-                    Why choose <span>Us</span>.
-                  </h4>
-                </div>
-
-                <p>
-                  Because we are Reliable. We are a team of experienced,
-                  passionate and dedicated people with deep insights about the
-                  African business landscape. Our mission is to facilitate
-                  growth by connecting companies and individuals to
-                  opportunities.
-                </p>
-              </div>
-
-              <div className="col-lg-4">
-                <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
-                  <h4>
-                    Our <span>Mission</span>.
-                  </h4>
-                </div>
-
-                <p>
-                  To unlock opportunities - enabling individuals and
-                  organizations realize their full potentials.
-                </p>
-              </div>
-
-              <div className="col-lg-4">
-                <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
-                  <h4>
-                    What we <span>Do</span>.
-                  </h4>
-                </div>
-
-                <p>
-                  <span className="subtitle">
-                    We are focused on four key areas of service to our Clients:{' '}
-                  </span>
-                  <p>
-                    • Business Advisory: Go-to-market strategy and allied
-                    support.
-                    <br /> • Leadership development. <br />• SME Incubation.{' '}
-                    <br />• Technology and Telecom solution sales.
-                  </p>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="container clearfix">
             <div className="clear"></div>
             <div className="col-lg-12">
               <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
@@ -129,6 +74,73 @@ const About = () => {
               </p>
             </div>
           </div>
+          <br />
+
+          <div className="container clearfix">
+            <div className="row col-mb-50 mb-0">
+              <div className="col-lg-3">
+                <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
+                  <h4>
+                    Why choose <span>Us</span>.
+                  </h4>
+                </div>
+
+                <p>
+                  Because we are Reliable. We are a team of experienced,
+                  passionate and dedicated people with deep insights about the
+                  African business landscape. Our mission is to facilitate
+                  growth by connecting companies and individuals to
+                  opportunities.
+                </p>
+              </div>
+
+              <div className="col-lg-3">
+                <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
+                  <h4>
+                    Our <span>VISION</span>.
+                  </h4>
+                </div>
+
+                <p>
+                  At Kairos we believe that Opportunities abound for Growth and
+                  Prosperity for Everyone.
+                </p>
+              </div>
+
+              <div className="col-lg-3">
+                <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
+                  <h4>
+                    Our <span>Mission</span>.
+                  </h4>
+                </div>
+
+                <p>
+                  To unlock opportunities - enabling individuals and
+                  organizations realize their full potentials.
+                </p>
+              </div>
+
+              <div className="col-lg-3">
+                <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
+                  <h4>
+                    What we <span>Do</span>.
+                  </h4>
+                </div>
+
+                <p>
+                  <span className="subtitle">
+                    We are focused on four key areas of service to our Clients:{' '}
+                  </span>
+                  <p>
+                    • Business Advisory: Go-to-market strategy and allied
+                    support.
+                    <br /> • Leadership development. <br />• SME Incubation.{' '}
+                    <br />• Technology and Telecom solution sales.
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="container clearfix">
             <div className="clear"></div>
@@ -137,23 +149,23 @@ const About = () => {
               <h4>Our Clients</h4>
             </div>
 
-            <ul className="clients-grid grid-2 grid-sm-3 grid-md-6 mb-0">
+            <ul className="clients-grid grid-3 grid-sm-3 grid-md-3 mb-0">
               <li className="grid-item">
-                <a href="http://logofury.com/logo/enzo.html">
-                  <img src="images/clients/1.png" alt="Clients" />
+                <a href="#">
+                  <img src="baybender.png" alt="Clients" />
                 </a>
               </li>
               <li className="grid-item">
-                <a href="http://logofury.com/">
-                  <img src="images/clients/2.png" alt="Clients" />
+                <a href="#">
+                  <img src="bellus.png" alt="Clients" />
                 </a>
               </li>
               <li className="grid-item">
-                <a href="http://logofaves.com/2021/03/grabbt/">
-                  <img src="images/clients/3.png" alt="Clients" />
+                <a href="#">
+                  <img src="infocus.png" alt="Clients" />
                 </a>
               </li>
-              <li className="grid-item">
+              {/* <li className="grid-item">
                 <a href="http://logofaves.com/2021/01/ladera-granola/">
                   <img src="images/clients/4.png" alt="Clients" />
                 </a>
@@ -168,7 +180,7 @@ const About = () => {
                 <a href="http://logofury.com/">
                   <img src="images/clients/12.png" alt="Clients" />
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

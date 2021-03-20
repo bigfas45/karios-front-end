@@ -141,10 +141,12 @@ const Home = () => {
                     <img src="images/services/2.jpg" alt="Why choose Us?" />
                   </div>
                   <div className="fbox-content px-0">
-                    <h3>
-                      Our Mission.
-                      <span className="subtitle">To Redefine your Brand.</span>
-                    </h3>
+                    <h3>Our VISION.</h3>
+                    <p>
+                      At Kairos we believe that Opportunities abound for Growth
+                      and Prosperity for Everyone.
+                    </p><br/>
+                    <h3>Our MISSION.</h3>
                     <p>
                       To unlock opportunities - enabling individuals and
                       organizations realize their full potentials.

@@ -13,7 +13,7 @@ const Slider = () => {
               <div className="container">
                 <div className="slider-caption slider-caption-center">
                   <h2 data-animate="fadeInUp">
-                    Innovation, Service & Consulting.
+                    INNOVATION | OPPORTUNITY | SERVICE
                   </h2>
                   <p
                     className="d-none d-sm-block"
@@ -32,18 +32,18 @@ const Slider = () => {
                 }}
               ></div>
             </div>
-            {/* <div className="swiper-slide dark">
+            <div className="swiper-slide dark">
               <div className="container">
                 <div className="slider-caption slider-caption-center">
-                  <h2 data-animate="fadeInUp">Beautifully Flexible</h2>
+                  <h2 data-animate="fadeInUp"> Leadership Training </h2>
                   <p
                     className="d-none d-sm-block"
                     data-animate="fadeInUp"
                     data-delay="200"
                   >
-                    Looks beautiful &amp; ultra-sharp on Retina Screen Displays.
-                    Powerful Layout with Responsive functionality that can be
-                    adapted to any screen size.
+                    We have a vision of birthing a new crop of African
+                    leadership and talent. At Kairos, we coach, mentor and help
+                    groom young and aspiring business leaders
                   </p>
                 </div>
               </div>
@@ -63,18 +63,24 @@ const Slider = () => {
                   style={{ backgroundColor: 'rgba(0,0,0,0.55)' }}
                 ></div>
               </div>
-            </div> */}
-            {/* <div className="swiper-slide">
+            </div>
+            <div className="swiper-slide">
               <div className="container">
                 <div className="slider-caption">
-                  <h2 data-animate="fadeInUp">Great Performance</h2>
+                  <h2 data-animate="fadeInUp">
+                    Business Advisory & Incubation{' '}
+                  </h2>
                   <p
                     className="d-none d-sm-block"
                     data-animate="fadeInUp"
                     data-delay="10"
                   >
-                    You'll be surprised to see the Final Results of your
-                    Creation &amp; would crave for more.
+                    Nigeria epitomizes the growth boom that Africa is
+                    experiencing. Our team of experienced professionals are
+                    dedicated to setting up your business with a customized
+                    Go-To-Market Plan leveraging our deep knowledge and
+                    experience in Africa by offering customized advisory
+                    services that address your unique needs
                   </p>
                 </div>
               </div>
@@ -85,7 +91,7 @@ const Slider = () => {
                   backgroundPosition: 'center top',
                 }}
               ></div>
-            </div> */}
+            </div>
           </div>
           <div className="slider-arrow-left">
             <i className="icon-angle-left"></i>
