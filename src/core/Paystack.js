@@ -10,6 +10,8 @@ const Paystack = (props) => {
   const [values, setValues] = useState([]);
   const [error, setError] = useState('');
   const publicKey = 'pk_test_3c713de9a71c00fa72ed7193436212f5ec0b08a5';
+  let email = '';
+  var price;
   const loadOrder = (referenceId) => {
     // ref = referenceId;
     getOrder(referenceId).then((data) => {
@@ -71,7 +73,8 @@ const Paystack = (props) => {
                       <div class="form-result"></div>
                       <div class="row">
                         {values.map((order, i) => {
-                          let email = order.email;
+                          email = order.email;
+                          price = order.product.price;
                           return (
                             <Fragment>
                               <h3 key={i} class="mb-0">
@@ -106,7 +109,7 @@ const Paystack = (props) => {
                             embed={true}
                             reference={getReference()}
                             email={email}
-                            amount={1000 * order.product.price}
+                            amount={1000 * price}
                             paystackkey={publicKey}
                             tag="button"
                           />
