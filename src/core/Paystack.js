@@ -105,8 +105,8 @@ const Paystack = (props) => {
                             disabled={true}
                             embed={true}
                             reference={getReference()}
-                            email="afasina@nasdng.com"
-                            amount={10000}
+                            email={email}
+                            amount={1000 * order.product.price}
                             paystackkey={publicKey}
                             tag="button"
                           />
