@@ -10,8 +10,6 @@ const Paystack = (props) => {
   const [values, setValues] = useState([]);
   const [error, setError] = useState('');
   const publicKey = 'pk_test_3c713de9a71c00fa72ed7193436212f5ec0b08a5';
-  let email = '';
-  var price;
   const loadOrder = (referenceId) => {
     // ref = referenceId;
     getOrder(referenceId).then((data) => {
@@ -73,8 +71,7 @@ const Paystack = (props) => {
                       <div class="form-result"></div>
                       <div class="row">
                         {values.map((order, i) => {
-                          email = order.email;
-                          price = order.product.price;
+                          let email = order.email;
                           return (
                             <Fragment>
                               <h3 key={i} class="mb-0">
@@ -108,8 +105,8 @@ const Paystack = (props) => {
                             disabled={true}
                             embed={true}
                             reference={getReference()}
-                            email={email}
-                            amount={1000 * price}
+                            email="afasina@nasdng.com"
+                            amount={10000}
                             paystackkey={publicKey}
                             tag="button"
                           />
