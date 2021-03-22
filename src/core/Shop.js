@@ -79,7 +79,7 @@ const Shop = () => {
   return (
     <Fragment>
       <Header></Header>
-      <section id="page-title">
+      {/* <section id="page-title">
         <div className="container clearfix">
           <h1>Shop</h1>
 
@@ -92,7 +92,23 @@ const Shop = () => {
             </li>
           </ol>
         </div>
-      </section>
+      </section> */}
+
+      <div id="page-menu">
+        <div id="page-menu-wrap">
+          <div className="container">
+            <div className="page-menu-row">
+              <div className="page-menu-title">
+                Shop 
+              </div>
+
+              <div id="page-menu-trigger">
+                <i className="icon-reorder"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section id="content">
         <div className="content-wrap">

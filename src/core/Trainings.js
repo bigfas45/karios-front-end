@@ -119,7 +119,7 @@ const Trainings = () => {
           <div className="container">
             <div className="page-menu-row">
               <div className="page-menu-title">
-                Trainings <span>Options</span>
+                Trainings 
               </div>
 
               <div id="page-menu-trigger">
