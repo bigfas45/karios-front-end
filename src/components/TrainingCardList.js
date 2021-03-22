@@ -4,7 +4,7 @@ import ShowImageHomeCard from './ShowImageHomeCard'
 
 const TrainingCardCom = () => {
   const [error, setError] = useState(false);
-  const [limit, setLimit] = useState(3);
+  const [limit, setLimit] = useState(10);
    const [skip, setSkip] = useState(0);
   const [filterResults, setFilterResults] = useState([]);
 
