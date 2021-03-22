@@ -31,13 +31,13 @@ const TrainingCardCom = () => {
           <div class="col pl-3">
             <div class="entry-title">
               <h4>
-                <ol>
+                <ul>
                   {filterResults.map((product, i) => (
                     <Fragment>
                       <li>{product.name}</li><br/>
                     </Fragment>
                   ))}
-                </ol>
+                </ul>
               </h4>
             </div>
           </div>
