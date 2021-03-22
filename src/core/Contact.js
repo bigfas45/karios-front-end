@@ -88,7 +88,7 @@ const Contact = () => {
   return (
     <Fragment>
       <Header></Header>
-      <section id="page-title">
+      {/* <section id="page-title">
         <div className="container clearfix">
           <h1>Contact</h1>
           <span>Get in Touch with Us</span>
@@ -101,7 +101,7 @@ const Contact = () => {
             </li>
           </ol>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Page Sub Menu
 		============================================= --> */}

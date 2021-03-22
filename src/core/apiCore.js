@@ -30,7 +30,31 @@ export const getFilteredProduct = (skip, limit,  filters = {}) => {
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/605607982b3bb44557009f87`, {
+  return fetch(`${API}/products/by/search/60551a93206e140d144a3e74`, {
+    // 605607982b3bb44557009f87
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const getFilteredProductList = (skip, limit, filters = {}) => {
+  const data = {
+    limit,
+    skip,
+    filters,
+  };
+  return fetch(`${API}/products/by/search/6056088dcf36d491855e3a88`, {
+    // 605607982b3bb44557009f87
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -53,7 +77,8 @@ export const getFilteredProduct2 = (skip, limit, filters = {}) => {
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/605607912b3bb44557009f86`, {
+  return fetch(`${API}/products/by/search/60551a7c206e140d144a3e73`, {
+    // 605607912b3bb44557009f86
     method: 'POST',
     headers: {
       Accept: 'application/json',

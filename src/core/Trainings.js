@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { getCategories, getFilteredProduct } from './apiCore';
 import Card from '../components/Card';
 import { prices } from './fixedPrices';
+import TrainingCard from '../components/TrainingCardList';
 
 const Trainings = () => {
   const [myFilters, setMyFilters] = useState({
@@ -43,7 +44,7 @@ const Trainings = () => {
   const loadMore = () => {
     let toSkip = skip + limit;
     //console.log(newFilters);
-    getFilteredProduct(toSkip, limit,  myFilters.filters).then((data) => {
+    getFilteredProduct(toSkip, limit, myFilters.filters).then((data) => {
       if (data.error) {
         setError(data.error);
       } else {
@@ -99,7 +100,7 @@ const Trainings = () => {
   return (
     <Fragment>
       <Header></Header>
-      <section id="page-title">
+      {/* <section id="page-title">
         <div className="container clearfix">
           <h1>Trainings</h1>
 
@@ -112,26 +113,79 @@ const Trainings = () => {
             </li>
           </ol>
         </div>
-      </section>
-      <section id="content">
+      </section> */}
+      <div id="page-menu">
+        <div id="page-menu-wrap">
+          <div className="container">
+            <div className="page-menu-row">
+              <div className="page-menu-title">
+                Trainings <span>Options</span>
+              </div>
+
+              <div id="page-menu-trigger">
+                <i className="icon-reorder"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <section id="content">
         <div className="content-wrap">
           <div className="container clearfix">
             <div className="row">
               {filterResults.map((product, i) => (
-                <div key={i} className="entry event col-12">
+                <div key={i} className="entry event col-8">
                   {filterResults ? <Card product={product} /> : 'No post yet'}
                 </div>
               ))}
+
+             
             </div>
 
-            {/* <!-- Pager
-					============================================= --> */}
+           
             <div className="d-flex justify-content-between">
               {loadMoreButton()}
             </div>
           </div>
         </div>
+      </section> */}
+
+      <section id="content">
+        <div className="content-wrap">
+          <div className="container clearfix">
+            <div className="row gutter-40 col-mb-80">
+              <div className="postcontent col-lg-9">
+                <div className="single-event">
+                  {filterResults.map((product, i) => (
+                    <div key={i} className="entry event col-12">
+                      {filterResults ? (
+                        <Card product={product} />
+                      ) : (
+                        'No post yet'
+                      )}
+                    </div>
+                  ))}
+                </div>
+                <div className="d-flex justify-content-between">
+                  {loadMoreButton()}
+                </div>
+              </div>
+              <div class="sidebar col-lg-3">
+                <div class="sidebar-widgets-wrap">
+                  <div class="widget clearfix">
+                    <h4>More Trainings</h4>
+                    <div class="posts-sm row col-mb-30" id="post-list-sidebar">
+                      {/*  */}
+                      <TrainingCard></TrainingCard>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
       <Footer></Footer>
     </Fragment>
   );

@@ -12,9 +12,9 @@ const Slider = () => {
             <div className="swiper-slide dark">
               <div className="container">
                 <div className="slider-caption slider-caption-center">
-                  <h2 data-animate="fadeInUp">
+                  <h3 data-animate="fadeInUp">
                     INNOVATION | OPPORTUNITY | SERVICE
-                  </h2>
+                  </h3>
                   <p
                     className="d-none d-sm-block"
                     data-animate="fadeInUp"

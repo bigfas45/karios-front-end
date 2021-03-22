@@ -82,7 +82,7 @@ const Shop = () => {
       <section id="page-title">
         <div className="container clearfix">
           <h1>Shop</h1>
-        
+
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <a href="#">Home</a>
@@ -145,14 +145,12 @@ const Shop = () => {
                       <div class="product-title">
                         <h3>
                           {/* <a href={`/shop-details/${product._id}`}> */}
-                          <a href="#">
-                            {product.name}
-                          </a>
+                          <a href="#">{product.name}</a>
                         </h3>
                       </div>
                       <div class="product-price">
                         {/* <del>$24.99</del> */}
-                        <ins>₦{product.price}</ins>
+                        <ins>₦{product.price.toLocaleString()}</ins>
                       </div>
                       <div class="product-rating">
                         <i class="icon-star3"></i>

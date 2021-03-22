@@ -26,7 +26,7 @@ const About = () => {
         <div className="container clearfix">
           <h1>About Us</h1>
           <span>Everything you need to know about our Company</span>
-          <ol className="breadcrumb">
+          {/* <ol className="breadcrumb">
             <Link className="breadcrumb-item">
               <a to="/">Home</a>
             </Link>
@@ -34,7 +34,7 @@ const About = () => {
             <li className="breadcrumb-item active" aria-current="page">
               About Us
             </li>
-          </ol>
+          </ol> */}
         </div>
       </section>
 
@@ -72,6 +72,23 @@ const About = () => {
                 Africa. Therefore, we offer sales of technology and telecom
                 products from both hardware and software providers.
               </p>
+              <p>
+                With an increasingly youthful population, a growing economy and
+                challenged educational systems, Nigeria and many African
+                countries continue to experience a short supply in critical
+                leadership competencies needed to run and grow world class
+                businesses. Companies continue to import expensive talent and
+                skilled manpower from Asia and Europe with significant impact on
+                their bottom lines. Kairos therefore provides a platform to
+                develop critical competencies needed to run successful
+                organizations. We achieve this through our Leadership Series,
+                coaching and mentoring services targeted at Mid and Top-level
+                employees of both local and international companies to prepare
+                them for leadership roles and improve succession planning and
+                bench strength of companies. In addition, Kairos provides seed
+                funding and business expertise to local SMEs to bridge their
+                funding gaps and make them more competitive.
+              </p>
             </div>
           </div>
           <br />
@@ -86,11 +103,12 @@ const About = () => {
                 </div>
 
                 <p>
-                  Because we are Reliable. We are a team of experienced,
-                  passionate and dedicated people with deep insights about the
-                  African business landscape. Our mission is to facilitate
-                  growth by connecting companies and individuals to
-                  opportunities.
+                  Kairos provides intermediation solutions, giving intending
+                  foreign Investors an option to test the waters with an
+                  outsourced agency solution. This allows the Investors time to
+                  test their strategy, find the winning and scalable formula
+                  before taking on the burden of setting up a local in-country
+                  entity.
                 </p>
               </div>
 

@@ -126,10 +126,12 @@ const Home = () => {
                       <span className="subtitle">Because we are Reliable.</span>
                     </h3>
                     <p>
-                      We are a team of experienced, passionate and dedicated
-                      people with deep insights about the African business
-                      landscape. Our mission is to facilitate growth by
-                      connecting companies and individuals to opportunities.
+                      Kairos provides intermediation solutions, giving intending
+                      foreign Investors an option to test the waters with an
+                      outsourced agency solution. This allows the Investors time
+                      to test their strategy, find the winning and scalable
+                      formula before taking on the burden of setting up a local
+                      in-country entity.
                     </p>
                   </div>
                 </div>
@@ -145,7 +147,8 @@ const Home = () => {
                     <p>
                       At Kairos we believe that Opportunities abound for Growth
                       and Prosperity for Everyone.
-                    </p><br/>
+                    </p>
+                    <br />
                     <h3>Our MISSION.</h3>
                     <p>
                       To unlock opportunities - enabling individuals and
@@ -199,7 +202,7 @@ const Home = () => {
 
           <div className="container clearfix">
             <div className="row gutter-40 mb-0">
-              <div className="col-lg-5">
+              <div className="col-lg-8">
                 <div className="accordion accordion-border mb-0">
                   <div className="accordion-header">
                     <div className="accordion-icon">
@@ -261,7 +264,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-lg-3 col-md-6">
+              {/* <div className="col-lg-3 col-md-6">
                 <div className="fancy-title title-border">
                   <h4>Our Services</h4>
                 </div>
@@ -332,7 +335,7 @@ const Home = () => {
                     </div>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               {/* recently posed training */}
               <TrainingCardCom></TrainingCardCom>

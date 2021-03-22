@@ -7,7 +7,7 @@ const Services = () => {
     <Fragment>
       <Header></Header>
 
-      <section id="page-title">
+      {/* <section id="page-title">
         <div className="container clearfix">
           <h1>Services</h1>
           <span>We provide Amazing Solutions</span>
@@ -23,7 +23,7 @@ const Services = () => {
             </li>
           </ol>
         </div>
-      </section>
+      </section> */}
 
       <section id="content">
         <div className="content-wrap">

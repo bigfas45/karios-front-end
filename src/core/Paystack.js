@@ -21,37 +21,20 @@ const Paystack = (props) => {
     });
   };
 
+  var referenceId;
+
   useEffect(() => {
-    const referenceId = props.match.params.referenceId;
+     referenceId = props.match.params.referenceId;
     loadOrder(referenceId);
   }, [props]);
 
+  const callback = (response) => {
+    console.log(response); // card charged successfully, get reference here
+  };
 
-  
-
-   const callback = (response) => {
-      console.log(response); // card charged successfully, get reference here
-    };
-
-   const close = () => {
-     console.log('Payment closed');
-   };
-
-   const getReference = () => {
-     //you can put any unique reference implementation code here
-     let text = '';
-     let possible =
-       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=';
-
-     for (let i = 0; i < 15; i++)
-       text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-     return text;
-   };
-
-
-
-
+  const close = () => {
+    console.log('Payment closed');
+  };
 
 
 
@@ -72,6 +55,7 @@ const Paystack = (props) => {
                       <div class="row">
                         {values.map((order, i) => {
                           let email = order.email;
+                          let amount = order.product.price
                           return (
                             <Fragment>
                               <h3 key={i} class="mb-0">
@@ -83,35 +67,36 @@ const Paystack = (props) => {
                                 <br />
                                 Course: {order.product.name}
                                 <br />
-                                Price: {order.product.price}
+                                Price: ₦{amount.toLocaleString()}
                                 <br />
                               </h3>
 
                               <br />
                               <br />
-                              <div class="col-12">{/*  */}</div>
+                              <div class="col-12">
+                                {' '}
+                                <p>
+                                  <PaystackButton
+                                    text="Make Payment"
+                                    class="payButton"
+                                    callback={callback()}
+                                    close={close()}
+                                    disabled={true}
+                                    embed={true}
+                                    reference={referenceId}
+                                    email={email}
+                                    amount={1000 * amount}
+                                    paystackkey={publicKey}
+                                    tag="button"
+                                  />
+                                </p>
+                              </div>
                             </Fragment>
                           );
                         })}
                       </div>
                       {/* put here */}
-                      <div>
-                        <p>
-                          <PaystackButton
-                            text="Make Payment"
-                            class="payButton"
-                            callback={callback()}
-                            close={close()}
-                            disabled={true}
-                            embed={true}
-                            reference={getReference()}
-                            email="afasina@nasdng.com"
-                            amount={10000}
-                            paystackkey={publicKey}
-                            tag="button"
-                          />
-                        </p>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
