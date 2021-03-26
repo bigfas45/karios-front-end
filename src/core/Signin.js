@@ -43,7 +43,7 @@ const clickSubmit = (event) => {
      const redirectUser = () => {
        if (redirectToReferrer) {
          if (user && user.role === 1) {
-           return <Redirect to="/dashbaord" />;
+           return <Redirect to="/dashboard" />;
          } else {
            return <Redirect to="/" />;
          }
