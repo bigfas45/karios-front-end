@@ -65,20 +65,11 @@ const Header = ({ history }) => {
                   </a>
                 </li>
 
-
                 {isAuthenticated() && (
                   <li className="menu-item">
-                    <span
-                      className="menu-link"
-                      style={{ cursor: 'pointer' }}
-                      onClick={() =>
-                        signout(() => {
-                          history.pushState('/');
-                        })
-                      }
-                    >
-                      <div>Signout</div>
-                    </span>
+                    <a className="menu-link" href="/dashboard">
+                      <div>Admin</div>
+                    </a>
                   </li>
                 )}
               </ul>

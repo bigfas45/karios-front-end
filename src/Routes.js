@@ -22,6 +22,10 @@ import Signup from './core/Signup';
 import UserDashboard from './user/UserDashboard';
 import AddCategory from './user/AddCategory';
 import AddTraining from './user/AddTraining';
+import Products from './user/Products';
+import ProductUpdate from './user/Products-update';
+import Gallery from './user/Gallery';
+import Orders from './user/Orders';
 
 const Routes = () => {
   return (
@@ -76,6 +80,22 @@ const Routes = () => {
           path="/create/trainings"
           exact
           component={AddTraining}
+        ></AdminRoute>
+        <AdminRoute path="/products" exact component={Products}></AdminRoute>
+        <AdminRoute
+          path="/products/:productId"
+          exact
+          component={ProductUpdate}
+        ></AdminRoute>
+        <AdminRoute
+          path="/gallery/:productId"
+          exact
+          component={Gallery}
+        ></AdminRoute>
+        <AdminRoute
+          path="/orders/:productId"
+          exact
+          component={Orders}
         ></AdminRoute>
       </Switch>
     </BrowserRouter>

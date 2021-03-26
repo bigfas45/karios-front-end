@@ -4,8 +4,8 @@ import react, { Fragment } from "react"
 const AdminSideBar = () => {
   return (
     <Fragment>
-      {/* <!-- Sidebar
-						============================================= --> */}
+     
+      
       <div className="sidebar col-lg-3">
         <div className="sidebar-widgets-wrap">
           <div className="widget widget_links clearfix">
@@ -21,6 +21,12 @@ const AdminSideBar = () => {
                   <div>Create Product</div>
                 </a>
               </li>
+              <li>
+                <a href="/products">
+                  <div>Product</div>
+                </a>
+              </li>
+              
             </ul>
           </div>
         </div>

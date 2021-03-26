@@ -148,3 +148,74 @@ export const updateProduct = (productId, userId, token, product) => {
     })
     .catch((err) => console.log(err));
 };
+
+export const getProject = (projectId) => {
+  return fetch(`${API}/products/${projectId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const getProjectRead = (projectId) => {
+  return fetch(`${API}/product/read/${projectId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const updateProject = (projectId, userId, token, project) => {
+  return fetch(`${API}/product/${projectId}/${userId}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: project,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const getProjectGallery = (projectId) => {
+  return fetch(`${API}/gallery/related/${projectId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const createGallery = (gallery) => {
+  return fetch(`${API}/gallery/create/`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+    },
+    body: gallery,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const getProjectOrders = (projectId) => {
+  return fetch(`${API}/order/related/${projectId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};

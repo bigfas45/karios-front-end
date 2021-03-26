@@ -178,8 +178,8 @@ const Billing = (props) => {
                               value={trainingType}
                             >
                               <option value="AX">~~~Select~~~~</option>
-                              <option value="Male">Online Class</option>
-                              <option value="Female">
+                              <option value="Online">Online Class</option>
+                              <option value="Physical">
                                 Physical Master Class{' '}
                               </option>
                             </select>

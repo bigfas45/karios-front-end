@@ -115,22 +115,43 @@ const AddCategory = () => {
   return (
     <Fragment>
       <HeaderDashboard></HeaderDashboard>
-      <section id="page-title">
-        <div className="container clearfix">
-          <h3>{`G'day ${user.name}, ready to add a new category`}</h3>
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item">
-              <a href="/">Home</a>
-            </li>
-            <li className="breadcrumb-item">
-              <a href="#">Admin</a>
-            </li>
-            <li className="breadcrumb-item active" aria-current="page">
-              Tables
-            </li>
-          </ol>
+      <div id="page-menu">
+        <div id="page-menu-wrap">
+          <div className="container">
+            <div className="page-menu-row">
+              <div className="page-menu-title">Create Category</div>
+              <nav className="page-menu-nav">
+                <ul className="page-menu-container">
+                  <li className="page-menu-item ">
+                    <a href="/dashboard">
+                      <div>Dashboard</div>
+                    </a>
+                  </li>
+
+                  <li className="page-menu-item current">
+                    <a href="/create/category">
+                      <div>Create Category</div>
+                    </a>
+                  </li>
+                  <li className="page-menu-item">
+                    <a href="/create/trainings">
+                      <div>Create Product</div>
+                    </a>
+                  </li>
+                  <li className="page-menu-item">
+                    <a href="/products">
+                      <div>Product List</div>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <div id="page-menu-trigger">
+                <i className="icon-reorder"></i>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
       <section id="content">
         <div className="content-wrap">
           <div className="container clearfix">
@@ -142,7 +163,7 @@ const AddCategory = () => {
                 {newCategoryForm()}
                 {goBack()}
               </div>
-             <AdminSideBar></AdminSideBar>
+          
             </div>
           </div>
         </div>

@@ -21,16 +21,13 @@ export const getCategories = () => {
     .catch((err) => console.log(err));
 };
 
-
-
-
-export const getFilteredProduct = (skip, limit,  filters = {}) => {
+export const getFilteredProduct = (skip, limit, filters = {}) => {
   const data = {
     limit,
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/605607982b3bb44557009f87`, {
+  return fetch(`${API}/products/by/search/60551a93206e140d144a3e74`, {
     // 605607982b3bb44557009f87
     method: 'POST',
     headers: {
@@ -70,14 +67,13 @@ export const getFilteredProductList = (skip, limit, filters = {}) => {
     });
 };
 
-
 export const getFilteredProduct2 = (skip, limit, filters = {}) => {
   const data = {
     limit,
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/605607912b3bb44557009f86`, {
+  return fetch(`${API}/products/by/search/60551a7c206e140d144a3e73`, {
     // 605607912b3bb44557009f86
     method: 'POST',
     headers: {
@@ -184,6 +180,29 @@ export const getOrder = (referenceId) => {
     .catch((err) => console.log(err));
 };
 
+
+export const getOrderId = (referenceId) => {
+  return fetch(`${API}/order/id/${referenceId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+
+export const getOrderMail = (orderId) => {
+  return fetch(`${API}/mail/order/${orderId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+
 export const contactForm = (contact) => {
   return fetch(`${API}/contact`, {
     method: 'POST',
@@ -201,35 +220,46 @@ export const contactForm = (contact) => {
     });
 };
 
+export const getProject = (projectId) => {
+  return fetch(`${API}/project/read/${projectId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
 
+export const getProjectGallery = (projectId) => {
+  return fetch(`${API}/gallery/related/${projectId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
 
+export const getProjectRelatedCategory = (projectCatId) => {
+  return fetch(`${API}/projects/related/${projectCatId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
 
-    export const getProject = (projectId) => {
-      return fetch(`${API}/project/read/${projectId}`, {
-        method: 'GET',
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .catch((err) => console.log(err));
-    };
-
-    export const getProjectGallery = (projectId) => {
-      return fetch(`${API}/gallery/related/${projectId}`, {
-        method: 'GET',
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .catch((err) => console.log(err));
-    };
-
-    export const getProjectRelatedCategory = (projectCatId) => {
-      return fetch(`${API}/projects/related/${projectCatId}`, {
-        method: 'GET',
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .catch((err) => console.log(err));
-    };
+export const processPaymentOrder = (payId) => {
+  return fetch(`${API}/order/update/${payId}`, {
+    method: 'PUT',
+    headers: {
+      Accept: 'application/json',
+    },
+    body: {},
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
