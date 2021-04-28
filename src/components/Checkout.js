@@ -155,7 +155,7 @@ const Checkout = ({ products, product }) => {
 
   return (
     <div>
-      <h2> Total: ${getTotal()}</h2>
+      <h2> Total: ₦{getTotal().toLocaleString("en-US")}</h2>
       {showLoading(data.loading)}
       {showSuccess(data.success)}
       {showError(data.error)}

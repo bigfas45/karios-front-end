@@ -74,7 +74,7 @@ export const getFilteredProduct2 = (skip, limit, filters = {}) => {
     filters,
   };
   return fetch(`${API}/products/by/search/605def15cb721807e280a7ff`, {
-    // 605607912b3bb44557009f86 60551a7c206e140d144a3e73
+    // 605607912b3bb44557009f86 
     method: 'POST',
     headers: {
       Accept: 'application/json',

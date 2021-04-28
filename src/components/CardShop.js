@@ -132,7 +132,9 @@ const CardShop = ({product, showViewProductButton = true , showAddToCartButton =
             {showStock(1)}
             <div className="card-footer">
               <div className="wcf-left">
-                <span className="price">₦{product.price}</span>
+                <span className="price">
+                  ₦{product.price.toLocaleString('en-US')}
+                </span>
               </div>
 
               <div className="wcf-right">
