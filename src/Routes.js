@@ -15,6 +15,8 @@ import Technology from './core/Technology';
 import Leadership from './core/Leadership';
 import Shop from './core/Shop';
 import ShopDetails from './core/shop-details';
+import Cart from './core/Cart';
+
 
 import AdminRoute from './auth/AdminRoute';
 import Signin from './core/Signin';
@@ -61,7 +63,7 @@ const Routes = () => {
           exact
           component={Training_Details}
         ></Route>
-
+        <Route path="/cart" exact component={Cart} />
         <Route path="/billing/:trainId" exact component={Billing}></Route>
 
         <Route path="/paystack/:referenceId" exact component={Paystack}></Route>

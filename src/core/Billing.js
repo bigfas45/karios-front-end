@@ -1,11 +1,13 @@
 import { Fragment, useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { createOrder } from './apiCore';
+import { createOrder , read} from './apiCore';
 import { Spinner, Button } from 'reactstrap';
 import { Link, Redirect } from 'react-router-dom';
 import TrainingCard from '../components/TrainingCard';
 const Billing = (props) => {
+  const [relatedProduct, setRelatedProduct] = useState([]);
+  const [error2, setError2] = useState(false);
   const [values, setValues] = useState({
     lastname: '',
     firstname: '',
@@ -39,6 +41,20 @@ const Billing = (props) => {
     loading,
     redirectToReferrer,
   } = values;
+  
+
+
+    const loadSingleProduct = (productId) => {
+      read(productId).then((data) => {
+        if (data.error) {
+          setError2(data.error);
+        } else {
+          setRelatedProduct(data.price);
+        
+        }
+      });
+  };
+  
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -47,6 +63,7 @@ const Billing = (props) => {
 
   useEffect(() => {
     setRefre(new Date().getTime());
+    loadSingleProduct(props.match.params.trainId);
   }, [props]);
 
   const clickSubmit = (event) => {
@@ -105,8 +122,11 @@ const Billing = (props) => {
   };
 
   const redirectUser = () => {
-    if (redirectToReferrer) {
+    if (redirectToReferrer && relatedProduct !=0) {
       return <Redirect to={`/paystack/${referenceId}`} />;
+    } else if (redirectToReferrer && relatedProduct === 0) {
+      alert('Thank you, your training has been registered successfully');
+      return <Redirect to={`/trainings`} />;
     }
   };
 

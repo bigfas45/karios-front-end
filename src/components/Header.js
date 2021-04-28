@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { signout, isAuthenticated } from '../auth';
 import IMG from './Kairo_PNG.png';
+import { itemTotal } from './CartHelpers';
 
 const Header = ({ history }) => {
   return (
@@ -72,6 +73,31 @@ const Header = ({ history }) => {
                     </a>
                   </li>
                 )}
+
+                {/* <!-- Top Cart
+							============================================= --> */}
+                <div
+                  id="top-cart"
+                  className="header-misc-icon d-none d-sm-block"
+                >
+                  <a href="#" id="top-cart-trigger">
+                    <i className="icon-line-bag"></i>
+                    <span className="top-cart-number">{itemTotal()}</span>
+                  </a>
+                  <div className="top-cart-content">
+                    <div className="top-cart-title">
+                      <h4>Shopping Cart</h4>
+                    </div>
+            
+                    <div className="top-cart-action">
+                     
+                      <a href="/cart" className="button button-3d button-small m-0">
+                        View Cart
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* <!-- #top-cart end --> */}
               </ul>
             </nav>
           </div>

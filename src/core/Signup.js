@@ -5,26 +5,40 @@ import { Link } from 'react-router-dom';
 import { signup } from '../auth';
 
 const Signup = () => {
+  const [values, setValues] = useState({
+    name: '',
+    email: '',
+    password: '',
+    error: '',
+    address: '',
+    telephone: '',
+    city: '',
+    sex: '',
 
-     const [values, setValues] = useState({
-       name: '',
-       email: '',
-       password: '',
-       error: '',
-       success: false,
-     });
-  
-   const { name, email, password, success, error } = values;
+    success: false,
+  });
 
-  
-   const handleChange = (name) => (event) => {
-     setValues({ ...values, error: false, [name]: event.target.value });
+  const {
+    name,
+    email,
+    password,
+    success,
+    error,
+    address,
+    telephone,
+    city,
+    sex,
+  } = values;
+
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, error: false, [name]: event.target.value });
   };
-  
-    const clickSubmit = (event) => {
-      event.preventDefault();
-      setValues({ ...values, error: false });
-      signup({ name, email, password }).then((data) => {
+
+  const clickSubmit = (event) => {
+    event.preventDefault();
+    setValues({ ...values, error: false });
+    signup({ name, email, password, address, telephone, city, sex }).then(
+      (data) => {
         if (data.error) {
           setValues({ ...values, error: data.error, success: false });
         } else {
@@ -33,44 +47,47 @@ const Signup = () => {
             name: '',
             email: '',
             password: '',
+            address,
+            telephone,
+            city,
+            sex,
             error: '',
             success: true,
           });
         }
-      });
-  };
-  
-     const showError = () => (
-       <div
-         className="alert alert-danger"
-         style={{ display: error ? '' : 'none' }}
-       >
-         {error}
-       </div>
-     );
-
-    const showSuccess = () => (
-      <div
-        class="style-msg successmsg"
-        style={{ display: success ? '' : 'none' }}
-      >
-        <div class="sb-msg">
-          <i class="icon-thumbs-up"></i>
-          <strong>Well done!</strong> New account is created. Please{' '}
-          <a href="/signin">Signin</a>
-        </div>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="alert"
-          aria-hidden="true"
-        >
-          &times;
-        </button>
-      </div>
+      }
     );
- 
+  };
 
+  const showError = () => (
+    <div
+      className="alert alert-danger"
+      style={{ display: error ? '' : 'none' }}
+    >
+      {error}
+    </div>
+  );
+
+  const showSuccess = () => (
+    <div
+      class="style-msg successmsg"
+      style={{ display: success ? '' : 'none' }}
+    >
+      <div class="sb-msg">
+        <i class="icon-thumbs-up"></i>
+        <strong>Well done!</strong> New account is created. Please{' '}
+        <a href="/signin">Signin</a>
+      </div>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-hidden="true"
+      >
+        &times;
+      </button>
+    </div>
+  );
 
   const signUpForm = () => (
     <Fragment>
@@ -139,15 +156,59 @@ const Signup = () => {
                       className="form-control"
                     />
                   </div>
-
                   <div className="col-12 form-group">
-                    <label for="register-form-password">Choose Password:</label>
+                    <label for="register-form-password">Password:</label>
                     <input
                       onChange={handleChange('password')}
                       type="password"
                       id="register-form-password"
                       name="register-form-password"
                       value={password}
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col-12 form-group">
+                    <label for="register-form-address"> Address:</label>
+                    <input
+                      onChange={handleChange('address')}
+                      type="text"
+                      id="register-form-address"
+                      name="register-form-address"
+                      value={address}
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col-12 form-group">
+                    <label for="register-form-telephone">Telephone:</label>
+                    <input
+                      onChange={handleChange('telephone')}
+                      type="number"
+                      id="register-form-telephone"
+                      name="register-form-telephone"
+                      value={telephone}
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col-12 form-group">
+                    <label for="register-form-city">City</label>
+                    <input
+                      onChange={handleChange('city')}
+                      type="text"
+                      id="register-form-city"
+                      name="register-form-city"
+                      value={city}
+                      className="form-control"
+                    />
+                  </div>
+
+                  <div className="col-12 form-group">
+                    <label for="register-form-sex">Sex:</label>
+                    <input
+                      onChange={handleChange('sex')}
+                      type="sex"
+                      id="register-form-sex"
+                      name="register-form-sex"
+                      value={sex}
                       className="form-control"
                     />
                   </div>
@@ -177,7 +238,7 @@ const Signup = () => {
   return (
     <Fragment>
       <Header></Header>
-     
+
       {signUpForm()}
       <Footer></Footer>
     </Fragment>
