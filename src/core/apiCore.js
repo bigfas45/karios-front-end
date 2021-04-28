@@ -27,7 +27,7 @@ export const getFilteredProduct = (skip, limit, filters = {}) => {
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/60551a93206e140d144a3e74`, {
+  return fetch(`${API}/products/by/search/605def04cb721807e280a7fe`, {
     // 605607982b3bb44557009f87  605def04cb721807e280a7fe
     method: 'POST',
     headers: {
@@ -50,7 +50,7 @@ export const getFilteredProductList = (skip, limit, filters = {}) => {
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/6056088dcf36d491855e3a88`, {
+  return fetch(`${API}/products/by/search/6089a206f2ff3e2a5c0fe0ef`, {
     // 605607982b3bb44557009f87
     method: 'POST',
     headers: {
@@ -73,7 +73,7 @@ export const getFilteredProduct2 = (skip, limit, filters = {}) => {
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/60551a7c206e140d144a3e73`, {
+  return fetch(`${API}/products/by/search/605def15cb721807e280a7ff`, {
     // 605607912b3bb44557009f86
     method: 'POST',
     headers: {
