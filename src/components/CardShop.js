@@ -40,12 +40,13 @@ const CardShop = ({product, showViewProductButton = true , showAddToCartButton =
 
     const showAddToCart = (showAddToCartButton) => {
          
-        return(
-         
-            showAddToCartButton && (
-            <button onClick={addToCart}  className="btn btn-outline-warning mt-2 mb-2">Add to cart</button>
-        )
-            
+        return (
+          showAddToCartButton && (
+            // <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2">Add to cart</button>
+            <a onClick={addToCart} className="buy-btn">
+              <i className="icon-shopping-cart1"></i>
+            </a>
+          )
         );
     };
 
@@ -54,12 +55,21 @@ const CardShop = ({product, showViewProductButton = true , showAddToCartButton =
     const showRemoveButton = showRemoveProductButton => {
         return (
           showRemoveProductButton && (
-            <button
-              onClick={() => {removeItem(product._id);setRun(!run);}}
-              className="btn btn-outline-danger mt-2 mb-2"
+            // <button
+            //   onClick={() => {removeItem(product._id);setRun(!run);}}
+            //   className="btn btn-outline-danger mt-2 mb-2"
+            // >
+            //   Remove Product
+            // </button>
+            <a
+              onClick={() => {
+                removeItem(product._id);
+                setRun(!run);
+              }}
+              className="buy-btn"
             >
-              Remove Product
-            </button>
+              <i className="icon-trash-alt"></i>
+            </a>
           )
         );
       };
@@ -99,33 +109,39 @@ const CardShop = ({product, showViewProductButton = true , showAddToCartButton =
 
 
     return (
-      <div className="card">
-        <div className="card-header name">{product.name}</div>
-        <div className="card-body">
-          {shouldRedirect(redirect)}
-        
-          <ShowImage item={product} url="product" />
-          <p className="lead mt-2">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: product.description.substring(0, 100),
-              }}
-            ></div>
-          </p>
-          <p className="black-10">${product.price}</p>
-          <p className="black-9">
-            Category: {product.category && product.category.name}
-          </p>
-          <p className="black-8">
-            Added {moment(product.createdAt).fromNow()}
-          </p>
+      <div className="col-md-10">
+        <div className="wsk-cp-product">
+          <div className="wsk-cp-img">
+            {shouldRedirect(redirect)}
+            <ShowImage item={product} url="product" />
+          </div>
+          <div className="wsk-cp-text">
+            <div className="category">
+              <span>{product.category && product.category.name}</span>
+            </div>
+            <div className="title-product">
+              <h3>{product.name}</h3>
+            </div>
+            <div className="description-prod">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: product.description.substring(0, 100),
+                }}
+              ></div>
+            </div>
+            {showStock(1)}
+            <div className="card-footer">
+              <div className="wcf-left">
+                <span className="price">₦{product.price}</span>
+              </div>
 
-          {showStock(1)}
-          <br />
-          {showViewButton(showViewProductButton)}
-          {showAddToCart(showAddToCartButton)}
-          {showRemoveButton(showRemoveProductButton)}
-          {showCartUpdateOptions(cartUpdate)}
+              <div className="wcf-right">
+                {showAddToCart(showAddToCartButton)}
+                {showRemoveButton(showRemoveProductButton)}
+              </div>
+            </div>
+            {showCartUpdateOptions(cartUpdate)}
+          </div>
         </div>
       </div>
     );
