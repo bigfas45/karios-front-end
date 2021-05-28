@@ -180,6 +180,17 @@ export const getOrder = (referenceId) => {
     .catch((err) => console.log(err));
 };
 
+export const getOrderProduct = (referenceId) => {
+  return fetch(`${API}/order/related2/${referenceId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+
 
 export const getOrderId = (referenceId) => {
   return fetch(`${API}/order/id/${referenceId}`, {
