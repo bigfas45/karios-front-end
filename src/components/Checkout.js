@@ -94,7 +94,7 @@ const Checkout = ({ products, product }) => {
 
 
   const config = {
-    public_key: 'FLWPUBK-c165cac1899725a89290997b552cbdc7-X',
+    public_key: 'FLWPUBK-34b9f33c4ada2e22ab576be11f087c63-X',
     tx_ref: referenceId,
     amount: getTotal(),
     currency: 'NGN',
