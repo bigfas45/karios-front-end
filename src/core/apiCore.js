@@ -27,8 +27,8 @@ export const getFilteredProduct = (skip, limit, filters = {}) => {
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/60551a93206e140d144a3e74`, {
-    // 605def04cb721807e280a7fe
+  return fetch(`${API}/products/by/search/605def04cb721807e280a7fe`, {
+    // 605607982b3bb44557009f87  605def04cb721807e280a7fe
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -74,7 +74,7 @@ export const getFilteredProduct2 = (skip, limit, filters = {}) => {
     filters,
   };
   return fetch(`${API}/products/by/search/605def15cb721807e280a7ff`, {
-    // 605607912b3bb44557009f86
+    // 605607912b3bb44557009f86 
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -180,6 +180,7 @@ export const getOrder = (referenceId) => {
     .catch((err) => console.log(err));
 };
 
+
 export const getOrderId = (referenceId) => {
   return fetch(`${API}/order/id/${referenceId}`, {
     method: 'GET',
@@ -191,18 +192,6 @@ export const getOrderId = (referenceId) => {
 };
 
 
-export const getOrderProduct = (productId) => {
-  return fetch(`${API}/order/related2/${productId}`, {
-    method: 'GET',
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .catch((err) => console.log(err));
-};
-
-
-
 export const getOrderMail = (orderId) => {
   return fetch(`${API}/mail/order/${orderId}`, {
     method: 'GET',
@@ -212,6 +201,7 @@ export const getOrderMail = (orderId) => {
     })
     .catch((err) => console.log(err));
 };
+
 
 export const contactForm = (contact) => {
   return fetch(`${API}/contact`, {
