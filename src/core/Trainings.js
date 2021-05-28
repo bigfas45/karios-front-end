@@ -118,9 +118,7 @@ const Trainings = () => {
         <div id="page-menu-wrap">
           <div className="container">
             <div className="page-menu-row">
-              <div className="page-menu-title">
-                Trainings 
-              </div>
+              <div className="page-menu-title">Trainings</div>
 
               <div id="page-menu-trigger">
                 <i className="icon-reorder"></i>

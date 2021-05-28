@@ -66,7 +66,11 @@ const Routes = () => {
         <Route path="/cart" exact component={Cart} />
         <Route path="/billing/:trainId" exact component={Billing}></Route>
 
-        <Route path="/paystack/:referenceId" exact component={Paystack}></Route>
+        <Route
+          path="/paystack/:referenceId/:productId"
+          exact
+          component={Paystack}
+        ></Route>
 
         <AdminRoute
           path="/dashboard"

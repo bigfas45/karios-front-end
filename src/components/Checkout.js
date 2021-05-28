@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 import 'braintree-web';
 import DropIn from 'braintree-web-drop-in-react';
 import { emptyCart } from './CartHelpers';
-import PaystackButton from 'react-paystack';
+
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 const Checkout = ({ products, product }) => {
   const [data, setData] = useState({
@@ -34,12 +35,12 @@ const Checkout = ({ products, product }) => {
   const sex = isAuthenticated() && isAuthenticated().user.sex;
   const token = isAuthenticated() && isAuthenticated().token;
 
-  console.log(address)
+  console.log(address);
 
   const getToken = (userId, token, email) => {
     getBraintreeClientToken(userId, token).then((data) => {
       if (data.error) {
-        setData({ ...data, error: data.erro });
+        setData({ ...data, error: data.error });
       } else {
         setData({ clientToken: data.clientToken });
       }
@@ -70,23 +71,6 @@ const Checkout = ({ products, product }) => {
     });
   };
 
-  const publicKey = 'pk_test_3c713de9a71c00fa72ed7193436212f5ec0b08a5';
-
-  let callback = (response) => {
-    if (response.message === 'Success') {
-      console.log(response.message);
-      {
-        order();
-      }
-      console.log("done");
-      emptyCart();
-    }
-  };
-
-  let close = () => {
-    console.log('Payment closed');
-  };
-
   useEffect(() => {
     getToken(userId, token);
     // PID();
@@ -107,25 +91,50 @@ const Checkout = ({ products, product }) => {
     );
   };
 
+
+
+  const config = {
+    public_key: 'FLWPUBK-c165cac1899725a89290997b552cbdc7-X',
+    tx_ref: referenceId,
+    amount: getTotal(),
+    currency: 'NGN',
+    payment_options: 'card,mobilemoney,ussd',
+    customer: {
+      email: email,
+      phonenumber: telephone,
+      name: name,
+    },
+    customizations: {
+      title: product.name,
+      description: 'Payment for items in cart',
+      logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+    },
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
+
   const showDropIn = () => (
     <div onBlur={() => setData({ ...data, error: '' })}>
       <div>
         {data.clientToken !== null && products.length > 0 ? (
           <div>
             <p>
-              <PaystackButton
-                text="Make Payment"
-                class="payButton"
-                callback={callback}
-                close={close}
-                disabled={true}
-                embed={true}
-                reference={referenceId}
-                email={email}
-                amount={1000 * 100}
-                paystackkey={publicKey}
-                tag="button"
-              />
+              <button
+                class="btn btn-primary btn-lg btn-block"
+                onClick={() => {
+                  handleFlutterPayment({
+                    callback: (response) => {
+                      order();
+                      emptyCart();
+                      console.log(response);
+                      closePaymentModal(); // this will close the modal programmatically
+                    },
+                    onClose: () => {},
+                  });
+                }}
+              >
+                Pay
+              </button>
             </p>
           </div>
         ) : null}
@@ -155,7 +164,7 @@ const Checkout = ({ products, product }) => {
 
   return (
     <div>
-      <h2> Total: ₦{getTotal().toLocaleString("en-US")}</h2>
+      <h2> Total: ₦{getTotal().toLocaleString('en-US')}</h2>
       {showLoading(data.loading)}
       {showSuccess(data.success)}
       {showError(data.error)}

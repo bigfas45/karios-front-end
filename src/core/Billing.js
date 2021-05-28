@@ -123,7 +123,11 @@ const Billing = (props) => {
 
   const redirectUser = () => {
     if (redirectToReferrer && relatedProduct !=0) {
-      return <Redirect to={`/paystack/${referenceId}`} />;
+      return (
+        <Redirect
+          to={`/paystack/${referenceId}/${props.match.params.trainId}`}
+        />
+      );
     } else if (redirectToReferrer && relatedProduct === 0) {
       alert('Thank you, your training has been registered successfully');
       return <Redirect to={`/trainings`} />;
