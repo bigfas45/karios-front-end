@@ -66,11 +66,11 @@ const Cart = () =>{
           </div>
         </div>
         <div className="row">
-          <div className="col-6">
+          <div className="col-md-6">
             {items.length > 0 ? showItems(items) : noItmesMessage()}
           </div>
 
-          <div className="col-6">
+          <div className="col-md-4" style={{margin: "2px"}}>
             <h2 className="mb-4">Your cart summary </h2>
             <hr />
             {items.map((product, i) => (

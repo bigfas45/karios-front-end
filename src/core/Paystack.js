@@ -106,10 +106,10 @@ const Paystack = (props) => {
   }, [props]);
 
   const redirect = () => {
-    if (redirectUser) {
+    
       if (!error) {
         return <Redirect to={`/`} />;
-      }
+      
     }
   };
 
@@ -178,8 +178,9 @@ const Paystack = (props) => {
                                       handleFlutterPayment({
                                         callback: (response) => {
                                           GetOrderId();
-                                          console.log(response);
+                                          
                                           closePaymentModal(); // this will close the modal programmatically
+                                          redirect();
                                         },
                                         onClose: () => {},
                                       });

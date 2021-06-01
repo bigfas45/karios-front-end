@@ -126,7 +126,7 @@ const Checkout = ({ products, product }) => {
                     callback: (response) => {
                       order();
                       emptyCart();
-                      console.log(response);
+                    
                       closePaymentModal(); // this will close the modal programmatically
                     },
                     onClose: () => {},
