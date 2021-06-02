@@ -107,7 +107,7 @@ const Paystack = (props) => {
 
   const redirect = () => {
     if (!error) {
-      return <Redirect to={`/`} />;
+      return <Redirect to={`/trainings`} />;
     }
   };
 
@@ -178,7 +178,7 @@ const Paystack = (props) => {
                                           GetOrderId();
 
                                           closePaymentModal(); // this will close the modal programmatically
-                                          // redirect();
+                                          redirect();
                                         },
                                         onClose: () => {},
                                       });
