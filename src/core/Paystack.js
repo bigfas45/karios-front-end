@@ -21,7 +21,7 @@ const Paystack = (props) => {
   const [error, setError] = useState('');
   const [error2, setError2] = useState('');
   const [price, Setprice] = useState('');
-    const [productName, SetproductName] = useState('');
+  const [productName, SetproductName] = useState('');
   var referenceId;
   var productId;
   let orderId;
@@ -106,10 +106,8 @@ const Paystack = (props) => {
   }, [props]);
 
   const redirect = () => {
-    
-      if (!error) {
-        return <Redirect to={`/`} />;
-      
+    if (!error) {
+      return <Redirect to={`/`} />;
     }
   };
 
@@ -178,9 +176,9 @@ const Paystack = (props) => {
                                       handleFlutterPayment({
                                         callback: (response) => {
                                           GetOrderId();
-                                          
+
                                           closePaymentModal(); // this will close the modal programmatically
-                                          redirect();
+                                          // redirect();
                                         },
                                         onClose: () => {},
                                       });
