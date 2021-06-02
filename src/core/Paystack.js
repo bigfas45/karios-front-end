@@ -209,7 +209,7 @@ const Paystack = (props) => {
       <Header></Header>
       {section()}
 
-      {redirect()}
+      {/* {redirect()} */}
 
       <Footer></Footer>
     </Fragment>
