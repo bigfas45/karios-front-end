@@ -101,14 +101,12 @@ const Paystack = (props) => {
     // console.log('productId', prodctId);
     loadOrder(referenceId);
     loadOrderId(referenceId);
-    GetOrderId();
+    // GetOrderId();
     loadOrderProduct(productId);
   }, [props]);
 
   const redirect = () => {
-    if (!error) {
-      return <Redirect to={`/trainings`} />;
-    }
+    return <Redirect to={`/trainings`} />;
   };
 
   const config = {
@@ -117,6 +115,7 @@ const Paystack = (props) => {
     amount: price,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
+    redirect_url: 'https://kairosng.com/trainings',
     customer: {
       email: email,
       phonenumber: telephone,
@@ -175,10 +174,10 @@ const Paystack = (props) => {
                                     onClick={() => {
                                       handleFlutterPayment({
                                         callback: (response) => {
+                                          console.log(response);
                                           GetOrderId();
 
                                           closePaymentModal(); // this will close the modal programmatically
-                                          redirect();
                                         },
                                         onClose: () => {},
                                       });

@@ -190,8 +190,6 @@ export const getOrderProduct = (referenceId) => {
     .catch((err) => console.log(err));
 };
 
-
-
 export const getOrderId = (referenceId) => {
   return fetch(`${API}/order/id/${referenceId}`, {
     method: 'GET',
@@ -202,7 +200,6 @@ export const getOrderId = (referenceId) => {
     .catch((err) => console.log(err));
 };
 
-
 export const getOrderMail = (orderId) => {
   return fetch(`${API}/mail/order/${orderId}`, {
     method: 'GET',
@@ -212,7 +209,6 @@ export const getOrderMail = (orderId) => {
     })
     .catch((err) => console.log(err));
 };
-
 
 export const contactForm = (contact) => {
   return fetch(`${API}/contact`, {
