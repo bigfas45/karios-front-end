@@ -10,7 +10,7 @@ import {
 } from './apiCore';
 import { isAuthenticated } from '../auth';
 import { Link, Redirect, useHistory } from 'react-router-dom';
-import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 
 const Paystack = (props) => {
   let history = useHistory();
@@ -25,6 +25,7 @@ const Paystack = (props) => {
   var referenceId;
   var productId;
   let orderId;
+  var orderId2;
   const [redirectUser, setRedirectUser] = useState('');
 
   const loadOrder = (referenceId) => {
@@ -105,17 +106,24 @@ const Paystack = (props) => {
     loadOrderProduct(productId);
   }, [props]);
 
+  // useEffect(() => {
+  //   orderId2 = values2Id._id;
+  //   console.log('productId', orderId2);
+  //   //  process(orderId2);
+  //   //  loadOrderMail(orderId2);
+  // });
+
   const redirect = () => {
     return <Redirect to={`/trainings`} />;
   };
 
   const config = {
-    public_key: 'FLWPUBK-34b9f33c4ada2e22ab576be11f087c63-X',
+    public_key: 'FLWPUBK_TEST-075ec686c87a8f63e27f2f80a55683c1-X',
     tx_ref: props.match.params.referenceId,
     amount: price,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
-    redirect_url: 'https://kairosng.com/trainings',
+    redirect_url: 'http://localhost:3000/trainings',
     customer: {
       email: email,
       phonenumber: telephone,
@@ -128,7 +136,15 @@ const Paystack = (props) => {
     },
   };
 
-  const handleFlutterPayment = useFlutterwave(config);
+const fwConfig = {
+  ...config,
+  text: 'Pay with Flutterwave!',
+  callback: (response) => {
+    console.log(response);
+    // closePaymentModal(); // this will close the modal programmatically
+  },
+  onClose: () => {},
+};
 
   const section = () => {
     return (
@@ -169,22 +185,7 @@ const Paystack = (props) => {
                               <div class="col-12">
                                 {' '}
                                 <p>
-                                  <button
-                                    class="btn btn-primary btn-lg btn-block"
-                                    onClick={() => {
-                                      handleFlutterPayment({
-                                        callback: (response) => {
-                                          console.log(response);
-                                          GetOrderId();
-
-                                          closePaymentModal(); // this will close the modal programmatically
-                                        },
-                                        onClose: () => {},
-                                      });
-                                    }}
-                                  >
-                                    Pay
-                                  </button>
+                                  <FlutterWaveButton {...fwConfig} />
                                 </p>
                               </div>
                             </Fragment>

@@ -45,6 +45,7 @@ const AddCategory = ({ match }) => {
                     <th>#</th>
                     <th> Name</th>
                     <th>Email</th>
+                    <th>Status</th>
                     <th>Address</th>
                     <th>City</th>
                     <th>Phone Number</th>
@@ -67,6 +68,7 @@ const AddCategory = ({ match }) => {
                           {order.firstname} {order.firstname}
                         </td>
                         <td> {order.email}</td>
+                        <td> {order.status}</td>
                         <td> {order.address}</td>
                         <td> {order.city}</td>
                         <td> {order.phonenumber}</td>
