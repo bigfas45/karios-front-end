@@ -27,7 +27,7 @@ export const getFilteredProduct = (skip, limit, filters = {}) => {
     skip,
     filters,
   };
-  return fetch(`${API}/products/by/search/60551a93206e140d144a3e74`, {
+  return fetch(`${API}/products/by/search/605def04cb721807e280a7fe`, {
     // 60551a93206e140d144a3e74  605def04cb721807e280a7fe
     method: 'POST',
     headers: {
