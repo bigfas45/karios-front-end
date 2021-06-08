@@ -8,7 +8,7 @@ const Thankyou = (props) => {
   const [values, setValues] = useState([]);
   const [mail, setMail] = useState([]);
 
-
+const [error, setError] = useState('');
 
 
    const loadOrderMail = (orderId) => {

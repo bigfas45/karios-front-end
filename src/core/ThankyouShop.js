@@ -9,6 +9,7 @@ import { emptyCart } from '../components/CartHelpers';
 const Thankyou = (props) => {
   const [values, setValues] = useState([]);
   const [mail, setMail] = useState([]);
+  const [error, setError] = useState('');
 
   const userId = isAuthenticated() && isAuthenticated().user._id;
   const email = isAuthenticated() && isAuthenticated().user.email;
