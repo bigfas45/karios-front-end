@@ -16,7 +16,8 @@ import Leadership from './core/Leadership';
 import Shop from './core/Shop';
 import ShopDetails from './core/shop-details';
 import Cart from './core/Cart';
-
+import Thankyou from './core/Thankyou';
+import ThankyouShop from './core/ThankyouShop';
 
 import AdminRoute from './auth/AdminRoute';
 import Signin from './core/Signin';
@@ -43,6 +44,13 @@ const Routes = () => {
         <Route path="/business-advisory" exact component={Business}></Route>
         <Route path="/sme-incubation" exact component={Sme}></Route>
         <Route path="/shop" exact component={Shop}></Route>
+        <Route path="/thankyou/:orderId" exact component={Thankyou}></Route>
+       
+        <Route
+          path="/thankyou/shop/:productId/:refId"
+          exact
+          component={ThankyouShop}
+        ></Route>
         <Route
           path="/leadership-development"
           exact

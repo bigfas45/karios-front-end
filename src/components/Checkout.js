@@ -4,10 +4,12 @@ import {
   getBraintreeClientToken,
   processPayment,
   createOrder,
+  processPaymentOrder,
+  getOrderMail,
 } from '../core/apiCore';
 import Card from './Card';
 import { isAuthenticated } from '../auth';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import 'braintree-web';
 import DropIn from 'braintree-web-drop-in-react';
 import { emptyCart } from './CartHelpers';
@@ -24,7 +26,9 @@ const Checkout = ({ products, product }) => {
     address: '',
   });
 
-  console.log(product._id);
+  const [orderId, setOrderId] = useState([]);
+  const [values, setValues] = useState([]);
+  const [mail, setMail] = useState([]);
 
   const userId = isAuthenticated() && isAuthenticated().user._id;
   const email = isAuthenticated() && isAuthenticated().user.email;
@@ -49,28 +53,6 @@ const Checkout = ({ products, product }) => {
 
   const referenceId = new Date().getTime();
 
-  const order = () => {
-    createOrder({
-      lastname: name,
-      firstname: name,
-      email: email,
-      address: address,
-      city: city,
-      phonenumber: telephone,
-      sex: sex,
-      trainingType: 'Shop',
-      companyname: name,
-      product: product._id,
-      referenceId,
-    }).then((data) => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        console.log(data);
-      }
-    });
-  };
-
   useEffect(() => {
     getToken(userId, token);
     // PID();
@@ -91,14 +73,13 @@ const Checkout = ({ products, product }) => {
     );
   };
 
-
-
   const config = {
     public_key: 'FLWPUBK-34b9f33c4ada2e22ab576be11f087c63-X',
     tx_ref: referenceId,
     amount: getTotal(),
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
+    redirect_url: `https://kairosng.com/thankyou/shop/${product._id}/${referenceId}`,
     customer: {
       email: email,
       phonenumber: telephone,
@@ -124,9 +105,6 @@ const Checkout = ({ products, product }) => {
                 onClick={() => {
                   handleFlutterPayment({
                     callback: (response) => {
-                      order();
-                      emptyCart();
-                    
                       closePaymentModal(); // this will close the modal programmatically
                     },
                     onClose: () => {},

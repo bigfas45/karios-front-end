@@ -65,65 +65,30 @@ const Paystack = (props) => {
     });
   };
 
-  const loadOrderMail = (orderId) => {
-    // ref = referenceId;
-    getOrderMail(orderId).then((data) => {
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setMail(data);
-      }
-    });
-  };
 
-  const process = (orderId) => {
-    // let orderId = '6059d431e9cd0c503c1bf494';
-    processPaymentOrder(orderId).then((data) => {
-      if (data.error) {
-        setError2(data.error);
-      } else {
-        setValues2(data);
-      }
-    });
-  };
 
-  const GetOrderId = () => {
-    values2Id.map((ord, i) => {
-      orderId = ord._id;
-      console.log('orderId', orderId);
-      process(orderId);
-      loadOrderMail(orderId);
-    });
-  };
+ 
+
+
 
   useEffect(() => {
     referenceId = props.match.params.referenceId;
     productId = props.match.params.productId;
-    // console.log('productId', prodctId);
     loadOrder(referenceId);
     loadOrderId(referenceId);
-    // GetOrderId();
     loadOrderProduct(productId);
   }, [props]);
 
-  // useEffect(() => {
-  //   orderId2 = values2Id._id;
-  //   console.log('productId', orderId2);
-  //   //  process(orderId2);
-  //   //  loadOrderMail(orderId2);
-  // });
 
-  const redirect = () => {
-    return <Redirect to={`/trainings`} />;
-  };
+
 
   const config = {
-    public_key: 'FLWPUBK_TEST-075ec686c87a8f63e27f2f80a55683c1-X',
+    public_key: 'FLWPUBK-34b9f33c4ada2e22ab576be11f087c63-X',
     tx_ref: props.match.params.referenceId,
     amount: price,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
-    redirect_url: 'http://localhost:3000/trainings',
+    redirect_url: `https://kairosng.com/thankyou/${values2Id._id}`,
     customer: {
       email: email,
       phonenumber: telephone,
@@ -140,7 +105,6 @@ const fwConfig = {
   ...config,
   text: 'Pay with Flutterwave!',
   callback: (response) => {
-    console.log(response);
     // closePaymentModal(); // this will close the modal programmatically
   },
   onClose: () => {},
