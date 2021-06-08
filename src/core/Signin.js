@@ -120,6 +120,12 @@ const clickSubmit = (event) => {
                         className="form-control"
                       />
                     </div>
+                    <div class="col-12 form-group">
+                      
+                      <a href="/signup" class="float-right">
+                        Signup
+                      </a>
+                    </div>
 
                     <div className="col-12 form-group">
                       {/* */}
@@ -166,7 +172,7 @@ const clickSubmit = (event) => {
     <Fragment>
       <Header></Header>
       {SigninForm()}
-      {redirectUser()}
+      {/* {redirectUser()} */}
       <Footer></Footer>
     </Fragment>
   );

@@ -66,6 +66,25 @@ const Header = ({ history }) => {
                   </a>
                 </li>
 
+               
+
+                {isAuthenticated() && (
+                  <li className="menu-item">
+                    <span
+                      className="menu-link"
+                      style={{ cursor: 'pointer' }}
+                      onClick={() =>
+                        signout(() => {
+                          history.pushState('/');
+                        })
+                      }
+                    >
+                      <div>Signout</div>
+                     
+                    </span>
+                  </li>
+                )}
+
                 {isAuthenticated() && (
                   <li className="menu-item">
                     <a className="menu-link" href="/dashboard">
@@ -88,10 +107,12 @@ const Header = ({ history }) => {
                     <div className="top-cart-title">
                       <h4>Shopping Cart</h4>
                     </div>
-            
+
                     <div className="top-cart-action">
-                     
-                      <a href="/cart" className="button button-3d button-small m-0">
+                      <a
+                        href="/cart"
+                        className="button button-3d button-small m-0"
+                      >
                         View Cart
                       </a>
                     </div>

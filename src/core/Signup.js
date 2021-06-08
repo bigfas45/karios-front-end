@@ -212,6 +212,11 @@ const Signup = () => {
                       className="form-control"
                     />
                   </div>
+                  <div class="col-12 form-group">
+                    <a href="/signin" class="float-right">
+                      Signin
+                    </a>
+                  </div>
 
                   <div className="col-12 form-group">
                     <button
