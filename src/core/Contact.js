@@ -175,7 +175,7 @@ const Contact = () => {
                       name="template-contactform-name"
                       value={name}
                       className="sm-form-control required"
-                      autocomplete="off"
+                      autoComplete="none"
                     />
                   </div>
 
@@ -190,7 +190,7 @@ const Contact = () => {
                       onChange={handleChnage('email')}
                       value={email}
                       className="required email sm-form-control"
-                      autocomplete="off"
+                      autoComplete="none"
                     />
                   </div>
 
@@ -205,7 +205,7 @@ const Contact = () => {
                       onChange={handleChnage('telephone')}
                       value={telephone}
                       className="sm-form-control"
-                      autocomplete="off"
+                      autoComplete="none"
                     />
                   </div>
 
@@ -241,7 +241,7 @@ const Contact = () => {
                       name="subject"
                       value={subject}
                       className="required sm-form-control"
-                      autocomplete="off"
+                      autoComplete="none"
                     />
                   </div>
 
@@ -256,7 +256,7 @@ const Contact = () => {
                       rows="6"
                       cols="30"
                       value={message}
-                      autocomplete="off"
+                      autoComplete="none"
                     ></textarea>
                   </div>
 
