@@ -4,7 +4,7 @@ import { signout, isAuthenticated } from '../auth';
 import IMG from './Kairo_PNG.png';
 import { itemTotal } from './CartHelpers';
 
-const Header = ({ history }) => {
+const HeaderNav = ({ history }) => {
   return (
     <header
       id="header"
@@ -66,8 +66,6 @@ const Header = ({ history }) => {
                   </a>
                 </li>
 
-               
-
                 {isAuthenticated() && (
                   <li className="menu-item">
                     <span
@@ -80,7 +78,6 @@ const Header = ({ history }) => {
                       }
                     >
                       <div>Signout</div>
-                     
                     </span>
                   </li>
                 )}
@@ -129,4 +126,4 @@ const Header = ({ history }) => {
   );
 };
 
-export default withRouter(Header);
+export default withRouter(HeaderNav);

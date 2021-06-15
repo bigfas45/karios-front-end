@@ -1,10 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { contactForm } from '../core/apiCore';
+import { contactForm, contactEmail } from '../core/apiCore';
 import swal from 'sweetalert';
 
 const Contact = () => {
+  const [mail, setMail] = useState([]);
+
   const [values, setValues] = useState({
     name: '',
     telephone: '',
@@ -15,18 +17,21 @@ const Contact = () => {
     error: '',
     success: '',
   });
-  const {
-    name,
-    email,
-    telephone,
-    message,
-    subject,
-    services,
-    error,
-    success,
-  } = values;
+  const { name, email, telephone, message, subject, services, error, success } =
+    values;
   const handleChnage = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
+  };
+
+  const contactSendMail = (contactId) => {
+    // ref = referenceId;
+    contactEmail(contactId).then((data) => {
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setMail(data);
+      }
+    });
   };
 
   const clickSubmit = (event) => {
@@ -53,6 +58,8 @@ const Contact = () => {
             error: false,
             success: true,
           });
+
+          contactSendMail(data.contactForm._id);
         }
       }
     );
@@ -323,7 +330,7 @@ const Contact = () => {
         </div>
         {/* <!-- Google Map
 			============================================= --> */}
-       
+
         {/* <section
           className="gmap"
           data-latitude=" 6.43211614566657"
@@ -335,7 +342,7 @@ const Contact = () => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.70861617807!2d3.468108650432969!3d6.431464825987712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf590870766cb%3A0x55a808f8b6e075b6!2sLofty%20Heights%20Office%20complex!5e0!3m2!1sen!2sng!4v1614777082901!5m2!1sen!2sng"
           width="600"
           height="450"
-          style={{border:"0"}}
+          style={{ border: '0' }}
           allowfullscreen=""
           loading="lazy"
         ></iframe>

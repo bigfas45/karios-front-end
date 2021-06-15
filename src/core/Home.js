@@ -2,11 +2,12 @@ import React, { Fragment, useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Slider from '../components/Slider';
 import Footer from '../components/Footer';
-import { contactForm } from '../core/apiCore';
+import { contactForm, contactEmail } from '../core/apiCore';
 import swal from 'sweetalert';
 import TrainingCardCom from '../components/TrainingCardCom';
 
 const Home = () => {
+  const [mail, setMail] = useState([]);
   const [values, setValues] = useState({
     email: '',
     error: '',
@@ -17,9 +18,20 @@ const Home = () => {
     setValues({ ...values, error: false, [name]: event.target.value });
   };
 
+  const contactSendMail = (contactId) => {
+    // ref = referenceId;
+    contactEmail(contactId).then((data) => {
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setMail(data);
+      }
+    });
+  };
+
   const clickSubmit = (event) => {
     event.preventDefault();
-    setValues({ ...values, error: false });
+    setValues({ ...values, error: false, success: false });
     contactForm({ email }).then((data) => {
       if (data.error) {
         setValues({
@@ -35,6 +47,7 @@ const Home = () => {
           error: false,
           success: true,
         });
+        contactSendMail(data.contactForm._id);
       }
     });
   };
@@ -216,19 +229,19 @@ const Home = () => {
                     organizations realize their full potentials.
                   </div>
 
-                  <div className="accordion-header">
+                  {/* <div className="accordion-header">
                     <div className="accordion-icon">
                       <i className="accordion-closed icon-ok-circle"></i>
                       <i className="accordion-open icon-remove-circle"></i>
                     </div>
                     <div className="accordion-title">How to get Support?</div>
-                  </div>
-                  <div className="accordion-content">
-                    {/* Nullam id dolor id nibh ultricies vehicula ut id elit.
+                  </div> */}
+                  {/* <div className="accordion-content">
+                    Nullam id dolor id nibh ultricies vehicula ut id elit.
                     Integer posuere erat a ante venenatis dapibus posuere velit
                     aliquet. Duis mollis, est non commodo luctus. Aenean lacinia
-                    bibendum nulla sed consectetur. */}
-                  </div>
+                    bibendum nulla sed consectetur.
+                  </div> */}
 
                   <div className="accordion-header">
                     <div className="accordion-icon">
@@ -244,7 +257,7 @@ const Home = () => {
                     stop, Lekki-epe Express way, Lekki phase 1, Lagos state.
                   </div>
 
-                  <div className="accordion-header">
+                  {/* <div className="accordion-header">
                     <div className="accordion-icon">
                       <i className="accordion-closed icon-ok-circle"></i>
                       <i className="accordion-open icon-remove-circle"></i>
@@ -260,7 +273,7 @@ const Home = () => {
                     provide an investor or a business with the exact advise &
                     strategy to prosper in the African Markets. Click below to
                     read about our full list of services.
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

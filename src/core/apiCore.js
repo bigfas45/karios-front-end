@@ -227,6 +227,16 @@ export const contactForm = (contact) => {
     });
 };
 
+export const contactEmail = (contactId) => {
+  return fetch(`${API}/mail/contactFrom/${contactId}`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
 export const getProject = (projectId) => {
   return fetch(`${API}/project/read/${projectId}`, {
     method: 'GET',
