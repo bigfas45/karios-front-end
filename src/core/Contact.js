@@ -301,23 +301,25 @@ const Contact = () => {
 							<!-- Testimonails
 							============================================= --> */}
                 <div className="col-md-8">
-                  <div
-                    className="fslider customjs testimonial twitter-scroll twitter-feed"
-                    data-username="envato"
-                    data-count="4"
-                    data-animation="slide"
-                    data-arrows="false"
-                  >
-                    <i
-                      className="i-plain color icon-twitter mb-0"
-                      style={{ marginRight: '15px' }}
-                    ></i>
-                    <div className="flexslider" style={{ width: 'auto' }}>
-                      <div className="slider-wrap">
-                        <div className="slide"></div>
+                  <a href="https://twitter.com/Kairos_ng">
+                    <div
+                      className="fslider customjs testimonial twitter-scroll twitter-feed"
+                      data-username="envato"
+                      data-count="4"
+                      data-animation="slide"
+                      data-arrows="false"
+                    >
+                      <i
+                        className="i-plain color icon-twitter mb-0"
+                        style={{ marginRight: '15px' }}
+                      ></i>
+                      <div className="flexslider" style={{ width: 'auto' }}>
+                        <div className="slider-wrap">
+                          <div className="slide"></div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

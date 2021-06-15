@@ -367,7 +367,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://twitter.com/Kairos_ng"
                   className="social-icon si-small si-borderless si-twitter"
                 >
                   <i className="icon-twitter"></i>
@@ -375,51 +375,11 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="#"
-                  className="social-icon si-small si-borderless si-gplus"
+                  href="https://www.instagram.com/kairosng/"
+                  className="social-icon si-small si-borderless si-instagram"
                 >
-                  <i className="icon-gplus"></i>
-                  <i className="icon-gplus"></i>
-                </a>
-
-                <a
-                  href="#"
-                  className="social-icon si-small si-borderless si-pinterest"
-                >
-                  <i className="icon-pinterest"></i>
-                  <i className="icon-pinterest"></i>
-                </a>
-
-                <a
-                  href="#"
-                  className="social-icon si-small si-borderless si-vimeo"
-                >
-                  <i className="icon-vimeo"></i>
-                  <i className="icon-vimeo"></i>
-                </a>
-
-                <a
-                  href="#"
-                  className="social-icon si-small si-borderless si-github"
-                >
-                  <i className="icon-github"></i>
-                  <i className="icon-github"></i>
-                </a>
-
-                <a
-                  href="#"
-                  className="social-icon si-small si-borderless si-yahoo"
-                >
-                  <i className="icon-yahoo"></i>
-                  <i className="icon-yahoo"></i>
-                </a>
-
-                <a
-                  href="#"
-                  className="social-icon si-small si-borderless si-linkedin"
-                >
-                  <i className="icon-linkedin"></i>
-                  <i className="icon-linkedin"></i>
+                  <i className="icon-instagram"></i>
+                  <i className="icon-instagram"></i>
                 </a>
               </div>
               <div className="clear"></div>
