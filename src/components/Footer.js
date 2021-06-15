@@ -386,8 +386,6 @@ const Footer = () => {
               <i className="icon-envelope2"></i> info@kairosng.com{' '}
               <span className="middot">&middot;</span>{' '}
               <i className="icon-headphones"></i> 01 630 6765,{' '}
-              <span className="middot">&middot;</span>{' '}
-              <i className="icon-skype2"></i> KariosOnSkype
             </div>
           </div>
         </div>

@@ -304,7 +304,7 @@ const Contact = () => {
                   <a href="https://twitter.com/Kairos_ng">
                     <div
                       className="fslider customjs testimonial twitter-scroll twitter-feed"
-                      data-username="envato"
+                      data-username="Kairos_ng"
                       data-count="4"
                       data-animation="slide"
                       data-arrows="false"
