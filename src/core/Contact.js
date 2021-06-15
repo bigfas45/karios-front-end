@@ -157,13 +157,7 @@ const Contact = () => {
 
                 {/* <!-- Contact Form
 							============================================= --> */}
-                <form
-                  className="row mb-0"
-                  id="template-contactform"
-                  name="template-contactform"
-                  action="http://themes.semicolonweb.com/html/canvas/include/form.php"
-                  method="post"
-                >
+                <form className="row mb-0" id="template-contactform">
                   <div className="col-md-6 form-group">
                     <label for="template-contactform-name">
                       Name <small>*</small>
@@ -175,7 +169,6 @@ const Contact = () => {
                       name="template-contactform-name"
                       value={name}
                       className="sm-form-control required"
-                      autoComplete="none"
                     />
                   </div>
 
@@ -190,7 +183,6 @@ const Contact = () => {
                       onChange={handleChnage('email')}
                       value={email}
                       className="required email sm-form-control"
-                      autoComplete="none"
                     />
                   </div>
 
@@ -205,7 +197,6 @@ const Contact = () => {
                       onChange={handleChnage('telephone')}
                       value={telephone}
                       className="sm-form-control"
-                      autoComplete="none"
                     />
                   </div>
 
@@ -241,7 +232,6 @@ const Contact = () => {
                       name="subject"
                       value={subject}
                       className="required sm-form-control"
-                      autoComplete="none"
                     />
                   </div>
 
@@ -256,7 +246,6 @@ const Contact = () => {
                       rows="6"
                       cols="30"
                       value={message}
-                      autoComplete="none"
                     ></textarea>
                   </div>
 
