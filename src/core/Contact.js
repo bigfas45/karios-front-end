@@ -300,7 +300,7 @@ const Contact = () => {
                 {/* 
 							<!-- Testimonails
 							============================================= --> */}
-                <div className="col-md-8">
+                {/* <div className="col-md-8">
                   <a href="https://twitter.com/Kairos_ng">
                     <div
                       className="fslider customjs testimonial twitter-scroll twitter-feed"
@@ -320,7 +320,7 @@ const Contact = () => {
                       </div>
                     </div>
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
