@@ -6,6 +6,7 @@ import swal from 'sweetalert';
 
 const Contact = () => {
   const [mail, setMail] = useState([]);
+  const [error2, setEror2] = useState([]);
 
   const [values, setValues] = useState({
     name: '',
@@ -27,7 +28,7 @@ const Contact = () => {
     // ref = referenceId;
     contactEmail(contactId).then((data) => {
       if (data.error) {
-        setError(data.error);
+        setEror2(data.error);
       } else {
         setMail(data);
       }

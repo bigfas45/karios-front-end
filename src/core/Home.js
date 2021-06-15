@@ -8,6 +8,7 @@ import TrainingCardCom from '../components/TrainingCardCom';
 
 const Home = () => {
   const [mail, setMail] = useState([]);
+  const [error2, setEror2] = useState([]);
   const [values, setValues] = useState({
     email: '',
     error: '',
@@ -22,7 +23,7 @@ const Home = () => {
     // ref = referenceId;
     contactEmail(contactId).then((data) => {
       if (data.error) {
-        setError(data.error);
+        setEror2(data.error);
       } else {
         setMail(data);
       }
