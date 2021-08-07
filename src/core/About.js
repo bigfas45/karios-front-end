@@ -42,6 +42,8 @@ const About = () => {
         <div className="content-wrap">
           <div className="container clearfix">
             <div className="clear"></div>
+
+
             <div className="col-lg-12">
               <div className="heading-block fancy-title border-bottom-0 title-bottom-border">
                 <h4>
@@ -90,6 +92,12 @@ const About = () => {
                 funding gaps and make them more competitive.
               </p>
             </div>
+
+
+
+
+
+            
           </div>
           <br />
 

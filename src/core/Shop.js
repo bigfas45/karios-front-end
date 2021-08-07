@@ -7,7 +7,6 @@ import { API } from '../config';
 import Card from '../components/CardShop';
 
 const Shop = () => {
-
   const [myFilters, setMyFilters] = useState({
     filters: { category: [], price: [] },
   });
