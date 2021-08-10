@@ -279,8 +279,8 @@ const Contact = () => {
                 <div className="col-md-4">
                   <address>
                     <strong>Headquarters:</strong>
-                    Block A, 1st floor, Lofty Heights Office Complex, Marwa Bus
-                    stop, Lekki-epe Express way, Lekki phase 1, Lagos state.
+                    6th floor, SpacePad building, km 18 Lekki-Epe expressway,
+                    Lekki, Lagos
                   </address>
                   <abbr title="Phone Number">
                     <strong>Phone:</strong>
